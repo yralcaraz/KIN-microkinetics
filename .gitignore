@@ -28,6 +28,9 @@ venv.bak/
 *.swo
 *~
 
-# Logs and temporary files
+# Logs and test caches
 *.log
 .pytest_cache/
+
+# Generated runtime data / output artifacts
+degradation_timeseries.csv
