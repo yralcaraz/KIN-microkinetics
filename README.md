@@ -1,4 +1,4 @@
-# KIN: Multiscale Microkinetics & Reactor Dynamics for Battery Electrolyte Scavengers
+# KIN: Multiscale (from DFT) Microkinetics & Reactor Dynamics for Battery Electrolyte Modelling
 
 [![Python](https://img.shields.io/badge/Python-3.10%2B-blue.svg)](https://www.python.org/)
 [![License](https://img.shields.io/badge/License-Academic-lightgrey.svg)]()
