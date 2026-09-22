@@ -34,3 +34,4 @@ venv.bak/
 
 # Generated runtime data / output artifacts
 degradation_timeseries.csv
+

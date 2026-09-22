@@ -4,3 +4,4 @@ pandas>=2.0.0
 matplotlib>=3.7.0
 ipykernel>=6.20.0
 jupyterlab>=4.0.0
+

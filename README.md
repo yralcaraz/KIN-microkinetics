@@ -138,3 +138,4 @@ from simulate_tank_reactor import simulate_tank_reactor
 - **Author:** Yeray Alcaraz Galván
 - **Supervision:** Prof. Peter Broqvist
 - **Affiliation:** Department of Chemistry – Ångström Laboratory, Uppsala University, Sweden
+
