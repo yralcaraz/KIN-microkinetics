@@ -1,5 +1,14 @@
 # ==============================================================================
+
 # BLOCK 4: REACTION THERMODYNAMICS & EQUILIBRIUM CONSTANT
+
+# This module calculates the reaction thermodynamics (ΔH_rxn, ΔS_rxn, ΔG_rxn) 
+# and equilibrium constant (K_eq) for a given reaction at a specified temperature.
+
+# The main function `calculate_reaction_thermo` takes a reaction ID, temperature,
+# and optional reaction network and species database, and returns a dictionary
+# containing the computed thermodynamic properties and equilibrium constant. 
+
 # ==============================================================================
 import inspect
 import numpy as np
