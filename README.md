@@ -1,5 +1,12 @@
 # KIN: Multiscale (from DFT) Microkinetics & Reactor Dynamics for Battery Electrolyte Modelling
 
+> [!CAUTION]
+> **PROJECT STATUS: EARLY EXPERIMENTAL STAGE**  
+> This repository is in an early stage of development. The codebase **contains known errors, unverified logic, and has not undergone deep rigorous validation**.  
+>  
+> * **DO NOT use in production** or rely on it for critical workflows/decision-making.  
+> * Results, APIs, and implementations are subject to breaking changes and major corrections without notice.  
+
 [![Python](https://img.shields.io/badge/Python-3.10%2B-blue.svg)](https://www.python.org/)
 [![License](https://img.shields.io/badge/License-Academic-lightgrey.svg)]()
 [![Repository](https://img.shields.io/badge/GitHub-Private-red.svg)]()
