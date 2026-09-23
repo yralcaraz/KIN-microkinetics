@@ -37,7 +37,8 @@ def simulate_tank_reactor(
     rtol: float = 1e-8,
     atol: float = 1e-12,
     n_points: int = 500,
-    mode: str = 'b3lyp_benchmark',
+    mode: str = None,
+    t_start_s: float = 1e-3,
     **kwargs
 ) -> dict:
     """
@@ -48,9 +49,17 @@ def simulate_tank_reactor(
     C0_dict : dict of initial concentrations in mol/L (M)
     t_end_s : total simulation time in seconds (default 1e6 s ~ 11.5 days)
     T_K : isothermal reactor temperature in Kelvin (default 298.15 K)
-    reactions_net : reaction network dictionary
+    reactions_net : reaction network dictionary (inherits from calling scope if None)
     bep_params : BEP barrier and alpha parameters
+    species_db : species database dictionary
     ec_buffered : if True, EC solvent concentration is held constant (reservoir)
+    method : stiff ODE solver method ('Radau', 'BDF', etc.)
+    rtol, atol : relative and absolute solver tolerances
+    n_points : number of evaluation points
+    mode : thermodynamic mode ('b3lyp_benchmark', 'qRRHO'). If None, inherits
+           'selected_thermo_mode' or 'selected_mode' from calling scope (default: 'b3lyp_benchmark').
+    t_start_s : initial evaluation time in seconds for logarithmic time grid (default: 1e-3 s = 1 ms).
+                Captures initial fast transients from t=0 while remaining strictly positive for log-scale plotting.
     """
     if reactions_net is None:
         import inspect
@@ -63,6 +72,23 @@ def simulate_tank_reactor(
                 reactions_net = frame.f_locals['reactions_network']
                 break
             frame = frame.f_back
+
+    if mode is None:
+        import inspect
+        frame = inspect.currentframe().f_back
+        while frame:
+            for var_name in ['selected_thermo_mode', 'selected_mode']:
+                if var_name in frame.f_globals:
+                    mode = frame.f_globals[var_name]
+                    break
+                if var_name in frame.f_locals:
+                    mode = frame.f_locals[var_name]
+                    break
+            if mode is not None:
+                break
+            frame = frame.f_back
+        if mode is None:
+            mode = 'b3lyp_benchmark'
             
     tracked_species = list(C0_dict.keys())
     idx = {s: i for i, s in enumerate(tracked_species)}
@@ -124,11 +150,16 @@ def simulate_tank_reactor(
                     
         return dCdt
 
-    t_eval = np.logspace(0, np.log10(t_end_s), n_points)
+    if 't_eval' in kwargs:
+        t_eval = kwargs.pop('t_eval')
+    else:
+        t_eval = np.logspace(np.log10(t_start_s), np.log10(t_end_s), n_points)
+    
+    t_span = kwargs.pop('t_span', [0.0, t_end_s])
     
     sol = solve_ivp(
         odes,
-        [t_eval[0], t_end_s],
+        t_span,
         C0,
         method=method,
         t_eval=t_eval,
@@ -149,8 +180,8 @@ def simulate_tank_reactor(
         if s in idx:
             p_tot += n_p * sol.y[idx[s]]
             
-    si_conserved = np.max(np.abs(si_tot - si_tot[0])) < 1e-6
-    p_conserved = np.max(np.abs(p_tot - p_tot[0])) < 1e-6
+    si_conserved = bool(np.max(np.abs(si_tot - si_tot[0])) < 1e-6)
+    p_conserved = bool(np.max(np.abs(p_tot - p_tot[0])) < 1e-6)
 
     return {
         't_s': sol.t,
@@ -165,5 +196,6 @@ def simulate_tank_reactor(
         'si_conserved': si_conserved,
         'p_conserved': p_conserved,
         'message': sol.message,
-        'success': sol.success
+        'success': sol.success,
+        'mode': mode
     }
