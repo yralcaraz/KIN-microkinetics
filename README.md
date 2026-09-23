@@ -88,9 +88,13 @@ $$I(\delta, t) = \sum_{k \in \text{Si species}} C_k(t) \cdot n_{\text{Si}, k} \c
 
 ## Directory Structure & Modules
 
+> [!TIP]
+> For the complete schematic architecture, mathematical derivations, parameter types, and return dictionaries of every simulation program, consult **[FUNCTIONS.md](FUNCTIONS.md)**.
+
 | File / Module | Responsibility | Key Interfaces |
 |---|---|---|
-| `tmspa_microkinetics_reactor_model.ipynb` | Master interactive pipeline notebook | 10 executable blocks from DFT to NMR |
+| `multiscale_microkinetics.ipynb` | Master interactive pipeline notebook | 10 executable blocks from DFT to NMR |
+| `theory-multiscale_microkinetics.md` | Complete theoretical background document | Derivations, stat mech, solvation cycles, kinetics |
 | `calculate_gas_thermo.py` | Gas-phase thermochemistry $H(T), S(T), G(T)$ | `calculate_gas_thermo(species, T)` |
 | `calculate_rate_constants.py` | Transition state rate derivation via Eyring | `calculate_rate_constants(dG_rxn, T, E0, alpha)` |
 | `calculate_reaction_thermo.py` | Reaction pathway thermodynamics & Wegscheider check | `calculate_reaction_thermo(reactions, species_thermo)` |
@@ -122,7 +126,7 @@ pip install -r requirements.txt
 ### 3. Running the Pipeline
 Launch the master notebook:
 ```bash
-jupyter lab tmspa_microkinetics_reactor_model.ipynb
+jupyter lab multiscale_microkinetics.ipynb
 ```
 Or execute simulation modules directly in Python:
 ```python

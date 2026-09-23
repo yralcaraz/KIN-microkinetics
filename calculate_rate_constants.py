@@ -121,7 +121,7 @@ def marcus_eyring(
     else:
         all_bep = _get_bep_parameters(bep_params)
         bep = all_bep.get(rxn_class, all_bep.get('default', {'E0_eV': 0.80, 'alpha': 0.50}))
-        lambda_val = 4.0 * bep.get('E0_eV', 0.80)
+        lambda_val = 4.0 * bep.get('E0_eV', 0.80) # Default λ = 4 * E0 = 3.20 eV for Marcus-BEP consistency
         
     ratio = dG_rxn_eV / lambda_val
     dG_barrier_f_eV = (lambda_val / 4.0) * ((1.0 + ratio) ** 2)

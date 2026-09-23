@@ -27,7 +27,9 @@ def fit_modified_arrhenius(
     k_values = []
     
     for T in T_grid:
+        # Iterates every T in T_grid
         rates = calculate_rate_constants(
+            # calls to calculate k_f(T) or k_r(T)
             rxn_id, T,
             bep_params=bep_params,
             reactions_net=reactions_net,
