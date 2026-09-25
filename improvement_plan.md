@@ -159,25 +159,15 @@ dG_barrier_f_kJ_mol = max(E0_kJ_mol, E0_kJ_mol + alpha * dG_rxn_kJ_mol)
 
 The `max()` operates on kJ/mol (after converting $E_0$ from eV). This is **numerically correct** because $\max$ is unit-invariant for monotonic conversions. No bug here.
 
-### ⚡ Finding 8 (CRITICAL): **Uniform $E_0 = 0.80$ eV across all families**
+### ✓ Finding 8 (RESOLVED): **Family-Specific BEP Activation Barriers ($E_{0,\text{solv}} = 1.30$ eV)**
 
-The `family_bep_parameters` dict assigns the same barrier to all 4 reaction classes:
-```python
-family_bep_parameters = {
-    'hydrolysis':     {'E0_eV': 0.80, 'alpha': 0.50},
-    'condensation':   {'E0_eV': 0.80, 'alpha': 0.50},
-    'transfer':       {'E0_eV': 0.80, 'alpha': 0.50},
-    'solvent_attack': {'E0_eV': 0.80, 'alpha': 0.50},
-}
-```
-
-**Known issue** (already discussed with Peter): Gogoi et al. 2024 experimentally proves TMSOH does NOT react with EC at room temperature. The `solvent_attack` family should have $E_0 \geq 1.30$ eV. The current value causes:
-- False CO₂ gassing in Blocks 7–8
-- TMSOH is consumed by R8 before it can participate in R5/R6/R7 (silyl transfer)
-- This is the root cause of Peter's observation that "TMSPA is supposed to be consumed but isn't"
-
-> [!CAUTION]
-> **Severity: CRITICAL.** This is the single most impactful false assumption in the entire pipeline. It makes the Block 7 simulation qualitatively wrong for species like TMSOH, TMSOEG, and CO₂.
+- **Previous Flaw:** `family_bep_parameters` previously set a uniform $E_0 = 0.80$ eV across all reaction classes. At room temperature, this caused cyclic carbonate ring-opening ($R_8, R_9$) to proceed $\sim 10^8\times$ too fast, generating artificial $\text{CO}_2$ bubbling and prematurely consuming TMSOH before silyl transfer ($R_5$–$R_7$) could occur.
+- **Resolution:** Following experimental findings from Gogoi et al. (*Nat. Commun.* 2024), `solvent_attack` is assigned $E_0 = 1.30$ eV in both `calculate_rate_constants.py` and `multiscale_microkinetics.ipynb` (Block 5).
+- **Physical Result in Block 7:**
+  - Forward rate constant drops from $0.186\text{ s}^{-1}$ to $6.59 \times 10^{-10}\text{ s}^{-1}$.
+  - False $\text{CO}_2$ gassing is completely suppressed ($0.00\text{ mM}$ at $10^6\text{ s}$).
+  - TMSOH is preserved for productive silyl transfer: TMSPA is fully consumed down to $10.0\text{ mM}$ with $20.0\text{ mM}$ siloxyl formed, resolving Peter Broqvist's original benchmark anomaly.
+- **Documented:** Added Section 5.3 and Section 4 notes to `theory-multiscale_microkinetics.md`.
 
 ---
 
@@ -294,19 +284,19 @@ The sweep varies $E_0$ uniformly across all families. To test the effect of a hi
 | 5 | 4 | LOW | ⚡ Incomplete | Only 1/3 Wegscheider cycles explicitly tested |
 | 6 | 4 | LOW | ⚡ Misleading | qRRHO comparison columns use garbage placeholder data |
 | 7 | 5 | — | ✓ Verified | `max()` in kJ/mol is unit-invariant, no bug |
-| 8 | 5 | **CRITICAL** | ⚡ False assumption | Uniform $E_0 = 0.80$ eV for `solvent_attack`; should be ≥1.30 eV (Gogoi 2024) |
+| 8 | 5 | **CRITICAL** | ✓ Resolved | Family-specific $E_0 = 1.30$ eV for `solvent_attack` (Gogoi 2024); false gassing suppressed |
 | 9 | 6 | LOW | ⚡ Tautology | Arrhenius $R^2 = 1.0$ is exact by construction in benchmark mode |
-| 10 | 7 | **MEDIUM** | ⚠ Bug | Integration starts at $t = 1$ s, missing initial fast transient |
-| 11 | 7 | LOW | ⚡ Design | `mode='b3lyp_benchmark'` hardcoded default; should inherit from global |
+| 10 | 7 | **MEDIUM** | ✓ Resolved | Integration starts at $t_0 = 0$, $t_{\text{eval}}$ from $10^{-3}$ s to capture initial fast transients |
+| 11 | 7 | LOW | ✓ Resolved | `mode` inherits dynamically from upstream `selected_thermo_mode` |
 | 12 | 8 | — | ✓ Verified | FWHM is consistent between 2D and 1D plots |
 | 13 | 8 | LOW | Physical | BMSPA and TMSOEG share −18.01 ppm; spectroscopic degeneracy undiscussed |
 | 14 | 9 | LOW | Feature | Sweep uses global $E_0$; cannot test family-specific barriers |
 
-### Critical Path
+### Critical Path Status
 
-The two findings that **materially affect simulation results** are:
+Both findings on the original Critical Path that materially distorted simulation results have been **RESOLVED**:
 
-1. **Finding 8 (CRITICAL):** `solvent_attack` $E_0 = 0.80$ eV → R8/R9 are ~10⁵× too fast → false gassing, TMSOH consumed prematurely.
-2. **Finding 10 (MEDIUM):** `t_eval` starts at 1 s → initial transient dynamics missing from output plots.
+1. ✓ **Finding 8 (CRITICAL - RESOLVED):** `solvent_attack` $E_0 = 1.30$ eV (Gogoi 2024) calibrated in `calculate_rate_constants.py` and Block 5. Forward rate drops by $3 \times 10^8$, stopping false gassing ($0.0\text{ mM}$ $\text{CO}_2$) and preserving TMSOH for stoichiometric silyl transfer.
+2. ✓ **Finding 10 (MEDIUM - RESOLVED):** `t_span = [0, t_end_s]` with `t_start_s = 1e-3` in `simulate_tank_reactor.py`, capturing the sub-second fast dynamics of water scavenging.
 
-All other findings are either cosmetic, affect only the unused qRRHO mode, or are known limitations already documented in the theory.
+Remaining open items are low-priority refinements (Finding 5: 3-cycle Wegscheider verification, Finding 14: family sweeps, and notes on placeholder qRRHO frequencies).

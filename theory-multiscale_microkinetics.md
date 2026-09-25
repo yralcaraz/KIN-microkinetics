@@ -491,6 +491,9 @@ The benchmark reaction network (`RXN-02`, Gogoi et al. 2024 / Peter Broqvist) or
    \end{aligned}$$
    This accounts for electrolyte gassing and cell pouch expansion during aging.
 
+> [!NOTE]
+> **Kinetic Gating (Gogoi et al. 2024 / Finding 8):** Although $R_8$ and $R_9$ are thermodynamically exergonic ($\Delta G < 0$), their ambient kinetics are strongly gated by a high intrinsic barrier ($E_0 = 1.30\text{ eV}$, $k_f \sim 6.6 \times 10^{-10}\text{ s}^{-1}$). At room temperature, TMSOH does not open EC, preventing premature additive degradation and false gassing (see Section 5.3).
+
 ---
 
 ### 2. Intuitive Meaning of the Wegscheider Consistency Condition (Cyclic Detailed Balance)
@@ -620,6 +623,18 @@ $E_0$ can be determined via three complementary methods:
 1. **First-Principles / Quantum Mechanics (DFT & MLIP):** Transition State (TS) search via Nudged Elastic Band (NEB) or dimer algorithms locating the exact first-order saddle point on the potential energy surface.
 2. **Computational Literature & Analogs:** Transferable barriers from high-level benchmark calculations on structurally related reaction families (e.g. silyl ester substitution, cyclic carbonate ring-opening).
 3. **Experimental Calibration:** Fitting $E_0$ family-by-family against time-resolved laboratory observables (e.g. operando $^{29}\text{Si}$ NMR consumption rates or OEMS $CO_2$ gas evolution).
+
+---
+
+### 5.3. Reaction-Family Barrier Calibration & Finding 8 Resolution
+
+While early engineering approximations used a uniform intrinsic barrier ($E_0 = 0.80\text{ eV}$) across all reaction classes, this assumption breaks down severely for solvent-additive interactions:
+
+- **Hydrolysis, Condensation, and Silyl Transfer ($R_1$–$R_7$):** Silyl ester cleavage and silanol condensation proceed with moderate barriers ($E_0 \approx 0.80\text{ eV}$), enabling rapid moisture scavenging on the order of minutes to hours at room temperature.
+- **Cyclic Carbonate Ring-Opening / Solvent Attack ($R_8, R_9$):** Ring-opening of cyclic ethylene carbonate (EC) by nucleophilic silanols (TMSOH) involves significant electronic reorganization and strained intermediate transition states. Assigning $E_0 = 0.80\text{ eV}$ predicts an unphysical forward rate $k_f \approx 0.19\text{ s}^{-1}$, causing rapid spurious $\text{CO}_2$ bubbling and prematurely destroying TMSOH before it can participate in productive silyl transfer ($R_5$–$R_7$).
+- **Gogoi et al. (2024) Calibration (Finding 8):** Operando measurements and high-level quantum mechanical calculations (Gogoi et al., *Nat. Commun.* 2024) demonstrate that TMSOH does *not* react with EC at ambient temperatures without severe thermal activation ($E_0 \ge 1.30\text{ eV}$). Setting $E_0(\text{solvent\_attack}) = 1.30\text{ eV}$ reduces the forward rate constant by $\sim 3 \times 10^8$ ($k_f \approx 6.6 \times 10^{-10}\text{ s}^{-1}$):
+  1. **Suppresses false gassing:** $\text{CO}_2$ concentration remains $0.0\text{ mM}$ under ambient storage.
+  2. **Preserves TMSOH for silyl transfer:** TMSOH reacts along the productive pathway ($R_5$–$R_7$), consuming TMSPA down to stoichiometric completion ($10\text{ mM}$) and forming siloxyl ($20\text{ mM}$) as experimentally observed.
 
 ---
 

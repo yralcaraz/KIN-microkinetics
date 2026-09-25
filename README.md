@@ -1,4 +1,4 @@
-# KIN: Multiscale (from DFT) Microkinetics & Reactor Dynamics for Battery Electrolyte Modelling
+# atom-to-reactor: Multiscale Microkinetics, Operando Spectroscopy & Reactor Dynamics
 
 > [!CAUTION]
 > **PROJECT STATUS: EARLY EXPERIMENTAL STAGE**  
@@ -115,8 +115,8 @@ $$I(\delta, t) = \sum_{k \in \text{Si species}} C_k(t) \cdot n_{\text{Si}, k} \c
 
 ### 2. Installation
 ```bash
-git clone https://github.com/yralcaraz/KIN-microkinetics.git
-cd KIN-microkinetics
+git clone https://github.com/yralcaraz/atom-to-reactor.git
+cd atom-to-reactor
 
 python3 -m venv .venv
 source .venv/bin/activate

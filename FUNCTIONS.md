@@ -1,7 +1,7 @@
-# KIN-microkinetics: Functional Specification & Architecture Reference
+# atom-to-reactor: Functional Specification & Architecture Reference
 
 > **Project:** BatteryAsTank — Master's Thesis (TFM)  
-> **Repository:** `KIN-microkinetics`  
+> **Repository:** `atom-to-reactor`  
 > **Author:** Yeray Alcaraz Galván  
 > **Affiliation:** Department of Chemistry – Ångström Laboratory, Uppsala University  
 > **Supervisor:** Prof. Peter Broqvist  
@@ -454,3 +454,86 @@ nmr = simulate_virtual_nmr(t_s=sim['t_s'], C_M=sim['C_M'], species_list=sim['spe
 print(f"Synthetic NMR map generated: {nmr['spectra_2d'].shape} points across {nmr['t_snap_h'][-1]:.1f} hours.")
 ```
 
+
+---
+
+## 10. Block 10: Multi-Stage Temperature-Programmed Protocol Reactor
+
+### `kinetics/reactor/protocol_reactor.py`
+
+#### Purpose
+Simulates non-isothermal bench-scale experimental protocols consisting of discrete multi-stage temperature schedules (e.g. pre-equilibration, discrete reagent injection with physical dilution, temperature steps from 20 °C to 80 °C, and chilled operando NMR acquisition periods). It recalculates finite-temperature rate constants $k_f(T)$ and $k_r(T)$ at every stage setpoint using the canonical Quasi-RRHO thermochemistry engine.
+
+#### Fundamental Physical Equations
+1. **Volumetric Recipe to Molarity Conversion:**
+   $$C_i = \phi_i \cdot \frac{1000 \cdot \rho_i}{MW_i}$$
+   Dilution upon injection of TMSPA:
+   $$C_i(t_{\text{inj}}^+) = C_i(t_{\text{inj}}^-) \cdot (1 - \phi_{\text{TMSPA}})$$
+
+2. **Stage-by-Stage Stiff ODE Integration:**
+   $$\frac{d C_i}{dt} = \sum_{j=1}^{N_{\text{rxn}}} S_{ij} \left( k_{j,f}(T_m) \prod_r C_r^{\nu_{rj}} - k_{j,r}(T_m) \prod_p C_p^{\nu_{pj}} \right)$$
+   Integrated with 5th-order Radau IIA Runge-Kutta across each stage $[t_{m-1}, t_m]$, chaining terminal concentrations $\mathbf{C}(t_m^-)$ as initial states for stage $m+1$.
+
+3. **Element Conservation Invariants (Post-Injection):**
+   $$\sum_k n_{\text{Si}, k} C_k(t) = \text{constant}, \quad \sum_k n_{\text{P}, k} C_k(t) = \text{constant}$$
+
+---
+
+## 11. Block 11: Molecular Symmetry & Chemical Equivalence Partitioning
+
+### `kinetics/spectroscopy/molecular_symmetry.py`
+
+#### Purpose
+Automatically groups atomic magnetic shieldings from 3D DFT coordinates into topological equivalence classes using covalent adjacency graphs and Weisfeiler-Lehman multiset refinement, eliminating manual peak assignment and identifying labile exchangeable protons (-OH, -NH).
+
+#### Fundamental Physical Equations
+1. **Covalent Bond Adjacency Matrix:**
+   $$A_{ab} = \mathbb{I}\left( \|\mathbf{x}_a - \mathbf{x}_b\|_2 < 1.2 \cdot (r_{\text{cov}, a} + r_{\text{cov}, b}) \right) \cdot (1 - \delta_{ab})$$
+
+2. **Weisfeiler-Lehman Neighborhood Multiset Refinement:**
+   $$\ell^{(t+1)}_a = \text{hash}\left( \ell^{(t)}_a, \, \text{sort}\left(\{\ell^{(t)}_b : b \in \mathcal{N}(a)\}\right) \right)$$
+   Converges to topological equivalence classes $\mathcal{C}_k$.
+
+3. **Symmetry-Averaged Chemical Shift Referencing:**
+   $$\bar{\sigma}_k = \frac{1}{|\mathcal{C}_k|} \sum_{a \in \mathcal{C}_k} \sigma_a, \quad \delta_k = \sigma_{\text{ref}} - \bar{\sigma}_k$$
+
+---
+
+## 12. Block 12: Multi-nuclear Operando NMR & Dynamic OH Exchange
+
+### `kinetics/spectroscopy/multinuclear_nmr.py`
+
+#### Purpose
+Generates synthetic operando NMR spectra for $^{29}\text{Si}$, $^{31}\text{P}$, $^{13}\text{C}$, and $^{1}\text{H}$. Incorporates fast-exchange chemical kinetics for labile hydroxyl protons, automatic chemical shift window clustering (`auto_regions`), and exact water determination by mass balance.
+
+#### Fundamental Physical Equations
+1. **Fast-Exchange Labile Proton Dynamic Coalescence:**
+   All exchangeable OH protons coalesce into a single population-weighted resonance:
+   $$\delta_{\text{OH, exch}}(t) = \frac{\sum_i C_i(t) \cdot n_{i, \text{OH}} \cdot \delta_{i, \text{OH}}}{\sum_i C_i(t) \cdot n_{i, \text{OH}}}$$
+
+2. **Total Hydroxyl Invariance & Water Mass Balance:**
+   Because no reaction creates or destroys OH protons ($\sum_i n_{i, \text{OH}} C_i(t) = 2 [\text{H}_2\text{O}]_0$):
+   $$[\text{H}_2\text{O}](t) = [\text{H}_2\text{O}]_0 - \frac{1}{2} \sum_{i \ne \text{H}_2\text{O}} n_{i, \text{OH}} \, C_i(t)$$
+
+---
+
+## 13. Block 13: Chemometric Reaction Fingerprints & Extent Inversion
+
+### `kinetics/spectroscopy/reaction_fingerprints.py`
+
+#### Purpose
+Constructs multi-nuclear stoichiometric reaction fingerprints $\mathbf{F} = \mathbf{S} \cdot \mathbf{P}_{\text{pure}}$, determines mathematical identifiability via Singular Value Decomposition (SVD), calculates the Net Analyte Signal (NAS) nuclear selectivity matrix, and reconstructs reaction extents $\Delta \boldsymbol{\xi}$ from measured difference spectra via pseudoinverse deconvolution.
+
+#### Fundamental Physical Equations
+1. **Stoichiometric Fingerprints & Block Variance Scaling:**
+   $$\mathbf{F}_{\text{raw}} = \mathbf{S}_{\text{vis}} \cdot \mathbf{P}_{\text{pure}}, \quad W_{\text{block}(X)} = \frac{1}{\|\mathbf{F}_{\text{raw}, \text{block}(X)}\|_F}, \quad \mathbf{F} = \mathbf{F}_{\text{raw}} \mathbf{W}$$
+
+2. **SVD Identifiability & Basis Projection:**
+   $$\operatorname{rank}(\mathbf{F}) = 6 < 9 \implies \text{Silanolysis is indistinguishable from hydrolysis + condensation: } R_5 = R_1 + R_4$$
+   Yields the 6-reaction lumped basis $\mathbf{F}_{\mathcal{B}}$: $\{R_1 \oplus R_5, R_2 \oplus R_6, R_3 \oplus R_7, R_4 \oplus R_{5-7}, R_8, R_9\}$.
+
+3. **Net Analyte Signal (NAS) & Selectivity:**
+   $$\mathbf{NAS}_j = \left( \mathbf{I} - \mathbf{F}_{-j}^\top \left( \mathbf{F}_{-j} \mathbf{F}_{-j}^\top \right)^{-1} \mathbf{F}_{-j} \right) \mathbf{f}_j, \quad \text{sel}_{j, X} = \frac{\|\mathbf{NAS}_{j, X}\|_2}{\|\mathbf{f}_{j, X}\|_2}$$
+
+4. **Pseudoinverse Extent Inversion:**
+   $$\widehat{\Delta \boldsymbol{\Xi}} = (\Delta \mathbf{D} \mathbf{W}) \cdot \mathbf{F}_{\mathcal{B}}^\dagger = (\Delta \mathbf{D} \mathbf{W}) \cdot \mathbf{F}_{\mathcal{B}}^\top \left( \mathbf{F}_{\mathcal{B}} \mathbf{F}_{\mathcal{B}}^\top \right)^{-1}$$

@@ -1,0 +1,796 @@
+
+--- PAGE 1 ---
+Reactivityof OrganosiliconAdditives with Water inLi-ion Batteries
+Neeha Gogoi,* Wandi Wahyudi, Jonas Mindemark, Guiomar Hernández, Peter Broqvist,
+and Erik J. Berg*
+CiteThis: J. Phys. Chem. C 2024, 128, 1654−1662
+ ReadOnline
+ACCESS
+ Metrics & More
+ Article Recommendations *sı Supporting Information
+ABSTRACT: Introducing small volumes of organosilicon-containing addi-
+tives as part of lithium-ion battery (LIB) electrolyte engineering has been
+gettingalotofattentionowingtotheseadditives’multifunctionalproperties.
+Tris(trimethylsilyl)phosphate(TMSPa)isaprominentmemberofthisclassof
+additivesandscavengesLewisbasessuchaswater,althoughtherateatwhich
+thereactionoccursandthefateoftheresultantproductinthebatterysystem
+still remain unknown. Herein, we have employed complementary nuclear
+magneticresonanceandgaschromatography−massspectrometrytosystem-
+atically study the reactivity of TMSPa with water in conventional organic
+carbonate solvents mimicking the Li-ion cell environment. The reaction
+products are identified, and a working reaction pathway is proposed by
+following the chemical evolution of the products over varying time and
+temperatures.Wefoundthatthemainreactionproductsaretrimethylsilanol
+(TMSOH)andphosphoricacid(H3PO4);however,variousP−O−Si-containingintermediateswerealsofound.Similartowater,the
+LewisbaseTMSOHcanundergoreactionwithTMSPaatroomtemperaturetoformhexamethyldisiloxaneandcanalsoactivate
+ethylenecarbonate(EC)ring-openingreactionsatelevatedtemperatures(≥80 °C),yieldingaTMSderivativewithethyleneglycol
+(TMS-EG).WhiletheformationofTMS-EGattheexpenseofECisinprincipleanunwantedparasiticreaction,itshouldbenoted
+thatthisreactionisonlyactivatedatelevatedtemperaturesincomparisontoECring-openingbyH2O,whichtakesplaceat ≥40 °C.
+Thus,thestudyunderlinestheadvantagesoforgano-siliconcompoundsaselectrolyteadditives.Elucidatingthereactionmechanism
+inmodelsystemslikethisisimportantforfuturestudiesofsimilaradditivesinordertoimprovetheaccuracyofadditiveexploration
+inLIBs.
+■INTRODUCTION
+The electrolyte plays a crucial role in lithium-ion batteries
+(LIBs) by providing Li+ transport between the positive and
+negative electrodes during the charge and discharge. The
+electrolytealsohastoguaranteetheformationofchemically
+stable electrode passivation layers [such as the solid−
+electrolyte interphase (SEI) on graphite anodes] since the
+electrodes operate already at or beyond its thermodynamic
+stability. State-of-the-art electrolytes in commercial LIBs are
+nonaqueous and based on lithium hexafluorophosphate
+(LiPF6)saltdissolvedinorganiccarbonatesolventmixtures.
+Thestrictincompatibilityoftheseelectrolytestowardmoisture
+ishoweverachallenge.Allelectrolytecomponentsaresensitive
+toward hydrolysis, which in turn further triggers electrolyte
+degradationandacceleratedbatterydecay.1
+Electrolyte engineering by the introduction of additives
+(typicallyupto5%pervolumeorweight)isaviablestrategy
+toenhancetheperformanceoftheelectrolyteandthebattery.
+Recently,additivemoleculescontainingorganosilicongroups
+have been receiving a lot of recognition owing to their
+multifunctionalproperties.Inacomparativestudy,Dahnand
+co-workers identified that an organosilicon-derived trivalent
+phosphorus(III)-based additive [tris(trimethylsilyl)phosphite,
+hereafter denoted as TMSPi] provides improved Li-ion cell
+propertieswhenaddedalongwithvinylenecarbonate(VC)in
+LiNi1/3Mn1/3Co1/3O2 (NMC111)/graphitepouchcells.2 The
+cell containing TMSPi exhibited longer cycle life, longer
+calendarlife,andreducedimpedancecomparedtothoseofa
+cellwithVCalone,whichtheyattributetoaslowerrateof
+parasiticsidereactionsinthepresenceoftheTMSPi.Hanet
+al. have also proposed that TMSPi serves as an effective
+scavengerofdetrimentalHFthatisgeneratednearthecathode
+surface.TMSPiconsumesacidicHF,preventingthecorrosion
+ofthecathodebyratherformingorganophosphoricacidand
+organofluorine-basedcompounds.3 Theproductsthusformed
+positivelyaffectthecathode/electrolyteinterface.Astudyby
+Abrahamandgroupfurtherconcludedthatincorporationof
+TMSPiinNMC532/graphitecellsfacilitatestheformationofa
+beneficialpositiveelectrodesurfacefilmloweringthecapacity
+Received: November14,2023
+Revised: December21,2023
+Accepted: January2,2024
+Published: January23,2024
+Articlepubs.acs.org/JPCC
+© 2024 The Authors. Published by
+American Chemical Society
+1654
+https://doi.org/10.1021/acs.jpcc.3c07505
+J. Phys. Chem. C 2024, 128, 1654−1662
+This article is licensed under CC-BY 4.0
+Downloaded from pubs.​acs.​org/​jpccck/​article-pdf/​128/​4/​1654/​1701409/​jp3c07505.​pdf by guest on 02 September 2026
+
+--- PAGE 2 ---
+fade of the cell.4 Upon X-ray photoelectron spectroscopy
+analysis,theyfoundthatthesurfacedepositsarerichinP-and
+O-containingspeciesandpostulatedthatthescissionofthe
+trimethylsilyl (TMS) groups from TMSPi helps the central
+phosphite moiety of the reactive additive molecule inter-
+mediatebindtooxygenatomsattheoxidesurfaceandforma
+protectivesurfacefilm.Ontheotherhand,Liaoetal.detected
+Si-containing residues from TMSPi on the surface of the
+lithiumnickelcobaltmanganeseoxidecathodeaftercycling.
+Theyclaimedthattheseareformedasoxidativedecomposition
+products,whichcansuppressfurtherelectrolytedecomposition
+onthecathodesurface.5
+Anotheradditivemoleculebelongingtothesamefamilyof
+silyl-ester-based additives is tris(trimethylsilyl)phosphate
+(TMSPa),whichconnectsthreeorganosilicongroups(TMS)
+toacentralphosphate.IthasbeenshownthatTMSPaexhibits
+thesamebeneficialeffectasTMSPiandthatthephosphate
+compoundactsinamoresubtlewaycomparedtoTMSPi.6,7
+Bollietal.showedthatTMSPa,andmoleculesalikesuchas
+TMSPi,scavengesnotonlyHFbutalsofluorides(e.g.,LiF)
+formedduringtheoperationoftheLi-ioncells.Theresults,
+however, concluded that electrode surface layers [SEI or
+cathode−electrolyte interphase (CEI)] largely remain un-
+affectedbythepresenceofTMSPaduringtheinitialformation
+cyclesofthecell.8Ourrecentstudyreportedthatthereactivity
+of TMSPa is not only limited to fluorides, but it could be
+extended to other Lewis bases (LBs) generated/present in
+LIBs,suchaswater,hydroxides,andalkoxides.9TheseLBsare
+generallyharmfulsincetheydecomposetheorganiccarbonate
+solvents,yieldingCO2andglycols.Byincludingsmallamounts
+of TMSPa in the electrolyte, such adverse effects can be
+mitigated by simply removing the LBs. The molecular
+mechanismbehindthescavengingofLBsreliesprimarilyon
+the Si−O bond of the TMSPa undergoing cleavage while
+reacting with the LBs forming presumably less harmful
+organosilicon residues (TMS-LB) as products. For instance,
+we recently showed that TMSPa scavenges H2O, in an
+environment of ethylene carbonate (EC)/ diethyl carbonate
+(DEC)mixture(1:1v/v),formingTMSOH.Calculationsof
+the first step of the TMSPa/H2O reaction showed that the
+hydrolysisofTMSPaisslightlyexothermic.However,thelater
+stepsintheH2OandTMSPareactionmechanismwerenot
+clarified.H2Oisanunavoidableimpuritypresentinorganic
+electrolytes and is well-known to detrimentally affect all
+components of the battery. Reduction of H2O leads to
+evolutionofH2 andLiOHformation,wherebythelatterring-
+opensthecycliccarbonatesolvent,suchasEC,asmentioned
+above.9DespitenumerousreportsontheobservationofSi−O
+bond cleavage and the formation of different silane-derived
+species in batteries containing TMSPa, a complete under-
+standingoftheunderlyingreactionpathwaysislacking.
+The aim of the study is to determine the reaction
+mechanismofTMSPawithH2Oresiduesinorganiccarbonate
+solventscommonlyusedinLi-ionbatteries.Ourhypothesisis
+thatTMSPascavengesH2Otoformlessharmfulsilyl-group-
+containing compounds other than TMSOH as previously
+postulated.ThereactionmechanismofTMSPaisinvestigated
+vianuclearmagneticresonance(NMR)andgaschromatog-
+raphy−mass spectrometry (GC−MS) as well as molecular
+dynamicscoupledwithdensityfunctionaltheory(MD−DFT).
+■METHODS
+PreparationoftheSampleSolutions.Battery-gradeEC
+(Sigma-Aldrich) and DEC (Sigma-Aldrich) were introduced
+into an Ar closed glovebox (O2, H2O content <1 ppm) as
+received from the suppliers. DEC was dried with molecular
+sievesandthenmixedwithEC(whichwasheatedupto45 °C
+tomelt).ThemixtureofEC/DECusedinthisstudyisina1:1
+volume ratio, unless otherwise stated. The EC/DEC was
+deliberately contaminated with 2 vol% H2O, and then, the
+mixture was stored at room temperature (RT) while being
+magneticallystirredfor24h.Then,thesamplewasleftforat
+least12hforitto equilibrate.Then5vol%TMSPa from
+Sigma-Aldrich was added into the mixture. 1,1,1,3,3,3-
+Hexamethyldisiloxane (TMSOTMS) and trimethylsilanol
+(TMSOH) from Sigma-Aldrich were used as-received from
+suppliers. After the reaction, the solution was extracted for
+visual inspection and qualitative assessment of the resulting
+compoundsunderNMR.
+Nuclear Magnetic Resonance.ForNMR,aJEOL(1H,
+400MHz;31P,162MHz;29Si,376MHz)spectrometer(JEOL
+ECZ 400S) was used, and chemical shifts were recordedin
+partspermillion.Fluorinatedethylenepropylene(FEP)NMR
+tube liners (outer diameter: 5 mm, Wilmad-LabGlass) with
+anhydrousdimethylsulfoxide(DMSO)-d6(99.9%)fromVWR
+wasusedasthedeuteratedsolvent.ThemouthoftheFEPtube
+wasclosedwithapoly(tetrafluoroethylene)(PTFE)plug.Each
+FEPNMRtubecontaining300 μLofDMSO-d6 wasplaced
+insideaglassNMRtube(innerdiameter:5mm)containing
+150 μLofthesamplesolution.Theglasstubewasagainclosed
+withaPTFEstopper.Anyinteractionbetweenthedeuterated
+solvent and reaction mixtures that could result in an
+undesirable reaction was strictly prohibited. The solution
+storageandsamplepreparationweredoneintheglovebox,and
+theH2Ocontentinsideitwaskeptbelow1ppm.Allspectra
+wereprocessedandanalyzedwithMestReNova6.0.2−5475.
+The1Hand13CNMRsignalswereinternallyreferencedtothe
+signalofDMSO-d6 at2.46and39.6ppm,respectively.
+Temperature variation in the mixture from RT to 80 °C
+(steps every 10 °C) in the NMR tube was performed to
+acceleratethechemicalreactions.Themixturewasheldateach
+statedtemperaturefor8hbeforerecordingthespectra.During
+thespectrumrecording,thetemperaturewasbroughtbackto
+RTtonothaveanyeffectontheoverallchemicalshiftsofthe
+NMRsignals.
+A few of the selected samples were then extracted and
+analyzedwithGC−MS.
+Gas Chromatography−Mass Spectrometry. The ex-
+perimentswithliquidinjectionsweredonewithaninjection
+volumeof0.1 μL.TheGC−MSmeasurementsweredonewith
+aShimadzuGC−MSQP2020NXW/ORP230Vequipped
+with an AOC-20i Plus stand-alone auto injector. A GC
+capillary(SH-200MS;0.25mmID;1.00 μmdf;30m)column
+wasused.ThesystemwascontrolledbytheGC−MSreal-time
+analysis,andthechromatogramswereanalyzedwithGC−MS
+postrun analysis (both from Shimadzu). Compounds were
+validatedwiththeNIST11library.Helium(99.999%purity,
+Alphagaz) was used as carrier gas with a 1.16 mL min−1
+column flow and 3 mL min−1 purge flow. The temperature
+program started at 100 °C which was held for 1 min. The
+temperaturewasrampedat30 °Cmin−1until280 °Candheld
+at280 °Cfor1min.Theoverallmeasurementtimewas11min
+withamassrangefrom25to700 m/zandaneventtimeof0.1
+TheJournalof PhysicalChemistry C pubs.acs.org/JPCC Article
+https://doi.org/10.1021/acs.jpcc.3c07505
+J. Phys. Chem. C 2024, 128, 1654−1662
+1655
+Downloaded from pubs.​acs.​org/​jpccck/​article-pdf/​128/​4/​1654/​1701409/​jp3c07505.​pdf by guest on 02 September 2026
+
+--- PAGE 3 ---
+sinscanmode.Themassspectrometerwasrunintheelectron
+impact ionization mode with the following parameters: the
+temperatureoftheionsourcewassetto220 °C;theinterface
+washeldat250 °C,andthefilamentwasoperatedatavoltage
+of 70 V; and the detector voltage was set relative to the
+respectivetuningresults.Thevaluespresentedinthisworkare
+reportedasrelativeintensitywithrespecttothehighestpeakin
+thespecificmeasurement,i.e.,theDECpeak.
+ComputationalMethod.Electronicstructurecalculations
+based on van der Waals (vdW)-corrected hybrid DFT was
+performed for gas-phase reactions of TMSPa with LBs in a
+previous study.9 Besides the actual scientific results, those
+computations demonstrated the importance of including
+solvation effects in order to find a correlation between the
+computational and experimental observations. It was found
+that the electrostatic interaction between the solvated
+molecules was very different, leading to larger lowering for
+thereactionproducts,andtherebyloweringthereactionfree
+energy.Toensurethatsucheffectsareaccountedforinthis
+work, we devised a computational protocol based on a
+combination of static hybrid-DFT calculations and machine
+learning(ML)-acceleratedlong-time-scalemoleculardynamics
+simulations(MD)ofsolvatedreactantsandproducts.Inthis
+protocol,0Kreactionenergies,i.e.,thebreakingandformation
+ofintramolecularchemicalbonds,arecalculatedatthehybrid
+DFTleveloftheoryusingGaussian09.10Morespecifically,we
+usetheB3LYPfunctional,11−14thelocalaug-cc-pVDZbasisset
+for the expansion of the electron wave functions. Weak
+nonlocalinteractions(vdWforces)wereaccountedforusing
+theGrimmeD3vdWcorrectionscheme.15Allstructureswere
+geometrically optimized until the forces on each atom were
+lessthan0.00077eV/Å.Thecomputedreactionenergieswere
+further corrected using relative solvation energies obtained
+fromML-acceleratedMDsimulationsofsolvatedreactantsand
+products using the PiNN ML model16 trained on data
+computed using the GFN2-xTB semiempirical model by
+Grimme et al.17,18 The GFN2-xTB model is generally good
+atdescribinggeometriesandintermolecularbondenergiesof
+molecularsystems.TheML-acceleratedMDsimulationsrely
+onanadaptivelearning-on-the-flyworkflowdevelopedbyShao
+et al.19 The PiNN model relies on PiNet, which is a high-
+performancegraphconvolutionalneuralnetwork.ThePiNN
+modelwastrainedfor5elements(H,C,O,Si,andP).The
+modelhasbeentrainedsothattheerrorwithrespecttothe
+referencecalculationsinthereporteddataissmallerthan0.02
+and2.00eV/Åforenergiesandforces,respectively.
+TheMDsimulationswiththePiNNmodelwereperformed
+withinthe NPTensembleusingaBerendsenthermostatat340
+K as implemented in the ASE ecosystem.20 In total, 40
+different MD simulations were performed for various
+combinations of reactants and products solvated in EC for
+the training. The initial configurations were obtained using
+PackMoL21 withthesolvatedmoleculeembeddedin15EC
+moleculesinaboxwithperiodicboundaryconditions.After
+thetraining,additionalproductionrunswereperformedforthe
+reactantsandproductsofatotalof512psusingthesamebox
+sizes.Thetimestepusedinthesimulationswas1fsinorderto
+accountforthemovementofthelighthydrogenatoms.The
+resulting relative solvation energies were averaging total
+energiesfromthelast200psforeachsolvatedspecies.
+■RESULTS ANDDISCUSSION
+Identifying the Reaction Pathways of TMSPa with
+H2O.Figure1a,bandcpresentsthe31PNMRspectraof5vol
+% TMSPa dissolved in the EC/DEC mixture that is
+contaminated with three different concentrations of H2O,
+i.e.,0.5,2,and5vol%,respectively.The31Pspectrumforthe
+solutioncontaining0.5v%H2O(Figure1a)showsastrong
+signal at −24.60 ppm corresponding to TMSPa. The weak
+signal at −13.90 ppm is identified as BMSPa (bis-
+(trimethylsilyl)phosphate),whichrepresentsTMSPathathas
+lostoneTMSunit,formedfromreaction1.
+ThepresenceofastrongTMSPasignalindicatesthatthere
+isasignificantamountofunreactedTMSPaleftinthesolution.
+Thespectrumforthesolutioncontaining2vol%H2O(Figure
+1b)showstheexistenceofthreesignalsat −15.16, −6.36,and
+1.95 ppm. The signal at −15.16 ppm is again identified as
+BMSPa, while the signal at −6.36 ppm corresponds to
+mono(trimethylsilyl)phosphate (MMSPa), which represents
+TMSPathatlosttwoTMSunits),e.g.,asformedfromreaction
+2.
+TherearenopeakscorrespondingtoTMSPa,indicatingthat
+TMSPawasmostlyconsumedduringthechemicalreactions.
+Thecompoundexhibitingthestrongsignalat −0.33ppmis
+Figure 1.31PNMRof5vol%TMSPaaddedinEC/DECthatis
+contaminatedwith(a)0.5,(b)2,and(c)5vol%H2OintheEC/
+DEC. TMSPa chemically reacts with H2O in a carbonate-based
+solventsystemtoformBMSPa,MMSPa,andH3PO4.
+TheJournalof PhysicalChemistry C pubs.acs.org/JPCC Article
+https://doi.org/10.1021/acs.jpcc.3c07505
+J. Phys. Chem. C 2024, 128, 1654−1662
+1656
+Downloaded from pubs.​acs.​org/​jpccck/​article-pdf/​128/​4/​1654/​1701409/​jp3c07505.​pdf by guest on 02 September 2026
+
+--- PAGE 4 ---
+identifiedasphosphoricacid(H3PO4),e.g.,asformedfrom
+chemicalreaction3.
+Finally, the spectrum for the solution containing 5 vol %
+H2O(Figure1c)showstwosignals,oneat −0.33ppmand
+another very weak signal at −8.00. These two signals are
+assignedtoH3PO4 andMMSPa,respectively.Thesechemical
+shiftsareincloseagreementtothosereportedinourprevious
+paper, where we have observed these intermediates formed
+duringthereactionbetweenLiOHandTMSPaincarbonate
+solventmixtures.9
+Itisalsotobenotedthatchemicalshiftsareinfluencedby
+theconcentrations,solvationstructures,andhydrogenbonding
+of the chemical species, which could explain the slight
+variationsinthechemicalshiftsofthespecies.H3PO4 isthe
+proposed end product of the reaction between TMSPa and
+H2OwhenallTMSunitsleftintheTMSPamolecule.The
+highlyelectrophilicTMSgrouplikelyactsasananionreceptor,
+acceptingOH−andformingTMSOH.Therefore,inapractical
+Li-ioncell,TMSPaisexpectedtoscavengeH2Oandtherefore
+eliminate the undesired side reactions triggered by H2O,
+discussed above. TMSOH, formed as a side product, is
+identifiedby29SiNMR,anditwillbediscussedinthelater
+partofthissection.
+1HNMRspectraforTMSPaandH2OmixturesintheEC/
+DECareshowninfigure S1intheSupporting Information
+(DMSO-d6,25 °C).TheTMSPamethylprotonsgiverisetoa
+singletat −0.02ppm.DuetothesimilarstructureofTMSPa
+andBMSPa(/MMSPa),themethylprotonsappearcloseto
+eachotherat −0.02ppmandthe −OHresonanceappearsat
+5.09ppm(SupportingInformationFigureS1).TMSPareadily
+establishes an equilibrium with TMSOH and BMSPa
+(/MMSPa) in solution in the presence of 2 vol % H2O.
+IncreasingtheamountofH2O,whilekeepingtheamountof
+TMSPaconstantinthereactionmixture(5vol%TMSPain
+EC/DEC contaminated with 5 vol % H2O), forces the
+equilibrium of reaction 1 to further right, favoring the
+formationofTMSPamolecule,whichhaslostatleastoneof
+its TMS units and hence TMSOH. On the other hand,
+loweringtheamountofH2Ointhemixture(5vol%TMSPa
+inEC/DECcontaminatedwith1vol%H2O)showsthatthe
+reaction stops at BMSPa, while most of TMSPa remains
+unreactedinthesolution.
+Theeffectofthetemperatureonthechemicalreactionswas
+investigated in-situ by ramping the temperature during the
+NMRexperimentsupto80 °C,withtheaimtoacceleratethe
+chemicalreactions.Thesamplewith2vol%H2OinEC/DEC
+with5vol%TMSPaaddedwasheatedto80 °C,andNMR
+spectra were recorded in-situ to track the evolution of the
+stablereactionproducts.NochangeinthesignalofTMSPa,
+BMSPa,andMMSPawasobservedinthe31PNMRspectra(as
+presentedinFigureS2),exceptforaslightbroadeningofallof
+thesignals.Inordertofurtherconfirmtheproposedreaction
+products(TMSOH,BMSPa,andMMSPa),29SiNMRspectra
+ofthe mixture at varying temperatures(from 30 to 80 °C)
+wereanalyzed.ThespectraforthesamplerecordedatRTafter
+heating to 30 and 80 °C are presented in Figure 2a,b,
+respectively (29Si NMR spectra of the mixtures in the
+intermediatetemperaturestepscanbefoundintheSupporting
+Information,figureS3).
+Thesignalat ∼15ppminthe29SiNMRspectrum(Figure
+2)observedinthesampleat30 °CisattributedtoTMSOH.
+The reaction intermediates BMSPa and MMSPa however
+cannotbedifferentiatedfromtheTMSPasignalobservedat
+∼25ppminthe29Sispectrumofthesample(representedas
+xMSPa).Itisassumedthattheseproducts(TMSPa,BMSPa,
+andMMSPa)haveverysimilarchemicalshiftsand,duetothe
+lowsensitivityofthe29SiNMR,couldnotbedistinguishedin
+the29Sispectra.Interestingly,thestrongestpeakat ∼7ppm
+observedforthemixturesisassignedtoTMSOTMS.These
+resultspointtowardanalternativereactionpathwaybetween
+TMSPaandH2O,whereTMSOTMSisoneofthemoststable
+endproducts.Onewaytoexplainthisisthattheeliminated
+reaction product TMSOH (formed from reactions 1−3)
+furtherdimerizestogiveTMSOTMSandwater(reaction4).
+Ifthisisthecase,thenH2Oisregenerated,which,inturn,
+could hypothetically again react with TMSPa. Another
+possibility is that if instead of H2O (OH−) attacking the
+additivemoleculefurtheron,theTMSOHformedduringthe
+reactionattacksTMSPainasubsequentstepwithitsTMSO-
+unit,breakingTMSPa’sO−Sibond.Inthiscase,TMSOTMS
+isthemostlikelyreactionproductalongwithBMSPa(reaction
+5).
+In order to confirm which reaction dominates, 5 vol %
+TMSPawasaddedtoanEC/DECmixturecontaining2vol%
+TMSOH. The 29Si NMR spectrum presented in Figure 3
+indeed confirms the formation of TMSOTMS. However,
+TMSPaandTMSOHcouldnotbedetectedinthespectrum,
+which indicates that TMSPa and the TMSOH have been
+consumed in the chemical reaction. The corresponding 31P
+NMR spectrum (in Figure 3 inset) of the sample mixture
+showstheformationofBMSPa.Averyweaksignalforresidual
+TMSPaisdetectedinthe31PNMRspectrum.
+Thus, this experiment confirms that TMSOTMS and
+BMSPa are formed due to the reaction of TMSPa and
+TMSOH and, furthermore, the TMSO-group of the excess
+TMSOHmoleculescouldattacktheBMSPainthefollowing
+Figure2.29SiNMRof2vol%H2OinEC/DECwith5vol%TMSPa
+at(a)30and(b)80 °C.
+TheJournalof PhysicalChemistry C pubs.acs.org/JPCC Article
+https://doi.org/10.1021/acs.jpcc.3c07505
+J. Phys. Chem. C 2024, 128, 1654−1662
+1657
+Downloaded from pubs.​acs.​org/​jpccck/​article-pdf/​128/​4/​1654/​1701409/​jp3c07505.​pdf by guest on 02 September 2026
+
+--- PAGE 5 ---
+reactionstep,resultingintheformationofTMSOTMSand
+MMSPaasfinalproducts(reaction6).
+ThesefindingsexplainthepresenceofasignalofMMSPain
+the 31P NMR spectrum, as seen in the inset of Figure 3.
+Indeed,Yimetal.andWinteretal.showedtheformationof
+TMSOTMS due to the O-silylation of TMSPi triggered by
+TMSOH.3,22,23ThefactthatthesignalforTMSOTMSinthe
+TMSPa-added EC/DEC mixture containing 2 vol % H2O
+growsasthetemperatureincreasesinthe29SiNMRspectrum
+as seen in Figure 2 while that for TMSOH and TMSPa
+disappearsindicatesthatthereactionofTMSOHwithTMSPa
+formingTMSOTMSisfurtherenhancedatelevatedtemper-
+ature.
+Interestingly,TMSOTMSisalsodetectedintraceamounts
+in pure TMSPa and TMSOH according to NMR analysis
+(FigureS3).Thepeakat ∼7ppmin29SiNMRspectradenotes
+the presence of TMSOTMS. Thus, based on spectroscopic
+evidence,itcanbesaidthatTMSPaisverysensitivetoward
+impurities, even if those impurities are present in very low
+amounts. The Si−O bond of TMSPa undergoes cleavage
+owing to the high affinity of Si toward nucleophiles (O−,
+OH−,F−,andOCH3−).Thiswouldeventuallyresultinthe
+TMSOTMSandBMSPa.BMSPawasindeedobservedinthe
+31PNMRspectrumforthepureTMSPa(figureS4).
+Inafirstattempt,inoursimulationsofhydrolysisofTMSPa
+formingBMSPa,MMSPa,H3PO4,TMSOTMS,andTMSOH
+accordingtoreactions1−8,weusedgasphasemoleculesto
+computetheenergyofreaction.
+Reactions7and8arebasicallythedirectchemicalreaction
+steps that take into account the formation and subsequent
+reaction of BMSPa (/MMSPa) with TMSOH leading to
+MMSPa(/H3PO4)anddimerformation.Thesereactionsare
+representedasredlinesintheenergydiagraminFigure4.
+Interestingly,theenergyofreaction ΔEwasalwaysfoundto
+be endothermic (ΔE > 0). The lowest ΔE for the various
+reactionsisschematicallyillustratedinFigure4(assignedwith
+solid lines). However, if we allow for intermolecular
+interactionsbetweenthereactantsandtheproductswiththe
+electrolytesolvent,hereexplicitlytreatedthroughourscheme
+described in the computational section, the ΔE for the
+reactionsbecomesnegative,whichimpliesthatthereactions
+areexothermicandspontaneous(ascanbeseeninFigure4,
+denoted with dashed lines). Thus, in order to obtain
+theoretical results that correlate with the experimental
+observations,itisimportanttoaccountforexplicitnoncovalent
+interactionstostabilizetheproductside.Thereasonforthisis
+theincreasedelectrostaticinteractionbetweentheECandOH
+groupsontheremainingBMSPaandTMSOHcomparedto
+themethyl-ECandwater-ECinteractiononthereactantside.
+Fromthesimulations,weconcludethatTMSPaspontaneously
+reacts with H2O to form BMSPa. The computations
+furthermore suggest that the reactions that lead to the
+formation of MMSPa and H3PO4 in the subsequent step
+(reactions2and3)arelessenergeticallyfavorablecomparedto
+thefirststep(reaction1).
+Furthermore,thecomputedreactionenergiesshowthatthe
+reactionsbetweenTMSPa(/BMSPa)andTMSOHforming
+TMSOTMS(reactions5and6)areslightlyexothermic,which
+matchestheexperimentalobservationsreportedearlier.These
+resultssuggestthattheabilityofthereactionproducttoform
+energetically favorable intermolecular interactions (primarily
+hydrogenbonding)isimportantforanefficientbreakageofthe
+O−SibondofTMSPa.
+Figure3.29SiNMRspectrumof5vol%TMSPaaddedtoEC/DEC
+containing2vol%TMSOHsamplemixture.Theinsetshowsthe
+corresponding31PNMRspectrum.
+Figure4.ReactionenergydiagramwithenergiesineVfortheTMSPa
+decompositiontoH3PO4 usingwaterasreagent.Thereactionsare
+numbered sequentially as they appear in the paper. In addition to
+reactions 1−6, two more chemical reactions are computed in the
+energy diagram (reaction 7 and 8, as described in the paragraph
+below). The solid lines are used to denote the reaction energies
+computedusingnoninteractingreactantsandproducts(gasphase).
+Thedashedlinesareusedtodenotetheenergiescomputedinvolving
+anexplicitECsolventmoleculetoensurethatallhydrogenbondsare
+accountedfor(seetheComputationalMethodsectionfordetails).
+TheinsetshowsthemolecularstructureofTMSPa,BMSPa,MMSPa,
+H3PO4,TMSOTMS,TMSOH,andH2O.TheorangeballisP,beige
+ballsareSi,grayballsareC,redballsareO,andwhiteballsareH.
+TheJournalof PhysicalChemistry C pubs.acs.org/JPCC Article
+https://doi.org/10.1021/acs.jpcc.3c07505
+J. Phys. Chem. C 2024, 128, 1654−1662
+1658
+Downloaded from pubs.​acs.​org/​jpccck/​article-pdf/​128/​4/​1654/​1701409/​jp3c07505.​pdf by guest on 02 September 2026
+
+--- PAGE 6 ---
+IdentifyingtheStabilityofTMSOHinEC/DEC.Having
+established that TMSOH is a rather reactive intermediate
+during the hydrolysis of TMSPa, we further elucidate an
+alternative fate of the compound, which potentially affects
+practicalcellperformance.Forthatpurpose,5vol%TMSOH
+was introduced in EC/DEC and then analyzed using NMR
+spectroscopy. The 13C, 1H, and 29Si NMR spectra of the
+mixtureareshowninFigure5a(i),b(i),andc(i),respectively.
+TMSOHisidentifiedat0.25, −0.23,and14.26ppminthe
+13C, 1H, and 29Si NMR spectra, respectively. It reveals that
+TMSOHisnotinvolvedinanyrecordablesidereactionswith
+thecarbonatesolventsatRT.TMSOTMS,whichispresentat
+thelevelofimpurity,isdetectedinthemixtureatRTinthe
+13C NMR spectrum as a small signal at 0.86 ppm [Figure
+5a(i)]. Its corresponding signal in the 1H NMR spectrum,
+however, could not be separated from the intense TMSOH
+signal.
+Themixturewasthenheatedto80 °Candthenbrought
+backtoRT,afterwhichtheNMRspectrumwasrecorded.The
+13C,1H,and29SiNMRspectraofthemixtureareshownin
+Figure 5a(ii),b(ii), and c(ii), respectively. The 13C NMR
+spectrum of the mixture still shows the existence of
+TMSOTMS;however,thesignalforTMSOHdecreases,and
+anewsignalappearsat −1.64ppm.Thissignalat −1.64ppmis
+attributedtoaTMSderivativewithEG(hereafterdenotedas
+TMS-EG),formedasaresultofaring-openingreactionofthe
+surroundingECmoleculetriggeredbyTMSOH(reaction9).
+Thisreactionalsoleadstotheformationofcarbondioxide.
+ECring-openingoccurseitherbycleavageoftheC−Oether
+bondbetweentheethyleneandcarbonateunits,followedby
+theseparationoftheC−Oetherbondbetweenthecarbonate
+CandetherO(pathway1inScheme1)unit,orbycleavageof
+theC−ObondbetweenthecarbonateCandetherO,followed
+byseparationoftheC−Obondbetweenthecarbonateand
+ethylene unit (pathway 2 in Scheme 1). In either case, the
+resultingproductsarethesame.
+Inthe1HNMRspectrumasshowninFigure5b(ii),the
+peakat −0.23ppmisattributedtotheTMSgroupofTMS-
+EG,whereasthegroupofpeakscenteredaround3.3ppmis
+attributed to the alkyl chain protons of the TMS-EG
+compound.
+The29SiNMRspectrumofthemixtureatRTshowsthe
+existenceoftheTMSOHsignalat14.26ppm.Intheheated
+sample, in addition to TMSOH, two new signals appear at
+18.01 and 19.08 ppm. The intense signal at 18.01 ppm is
+attributedtoTMS-EG.ThelowamountofTMSOTMSisnot
+detectedunder29SiNMRduetoitslowsensitivity.Thesignal
+at19.08ppmcouldnotbeexactlyidentifiedbutisbelievedto
+beacontributionfromthespeciesformedasaresultofthe
+furtherpolymerizationreactionofthesurroundingECsolvent
+moleculeinducedbytheTMS-EG,soformed(reaction10).
+The ring-opened EC with retained carbonate is likely to
+formasaresult,contributingtothesignalat19.08ppm.
+Tofurther corroborateourresults, GC−MS on thesame
+sampleswasperformed,andtheresultsarepresentedinFigure
+6.Forcomparison,thechromatogramofbaselineEC/DECis
+presentedinFigure6a.InadditiontotheECandDECasthe
+maincontents(at5.79and2.74min,respectively),Figure6b,c
+demonstratesthechromatogramoftheTMSOHinEC/DEC
+atRTand80 °C,respectively,whereTMSOHisobservedasa
+signalattheretentiontimeof1.68min.Indeed,thepresence
+ofTMS-EGasthering-openedreactionproductisconfirmed
+forthereactionmixtureatelevatedtemperatures(Figure6c).
+Ithasapeakwiththe m/zvalueof75,73,103,and119(see
+SupportingInformationS5)observedattheretentiontimeof
+2.87 min. Moreover, TMSOTMS was confirmed in both
+Figure 5. (a) 13C, (b) 1H, and (c) 29Si NMR spectra of 5 vol %
+TMSOHinEC/DECmixtureat(i)RTand(ii)80 °C.
+TheJournalof PhysicalChemistry C pubs.acs.org/JPCC Article
+https://doi.org/10.1021/acs.jpcc.3c07505
+J. Phys. Chem. C 2024, 128, 1654−1662
+1659
+Downloaded from pubs.​acs.​org/​jpccck/​article-pdf/​128/​4/​1654/​1701409/​jp3c07505.​pdf by guest on 02 September 2026
+
+--- PAGE 7 ---
+samples. It has a peak with the m/z value of 147 and 73
+observedattheretentiontimeof1.75min.
+ContrarytoourpreviousresultwhereTMSOTMSisfound
+tobethemostlikelyproductoftheTMSPaandH2Oreaction,
+TMSOTMS isnot found to be the end product here. This
+rules out that TMSOTMS forms through the TMSOH
+dimerizationreaction(reaction4)butratherpointsintothe
+direction that TMSOTMS is the adduct of TMSPa and
+TMSOH reaction (reaction 5). The result here is also in
+agreement with the finding that H2O reacts with EC more
+favorablythanTMSOHdoes.Thus,itcanbeconcludedthat
+whiletheformationofTMS-EGattheexpenseofECisin
+principle an unwanted parasitic reaction in a Li-ion cell, it
+should be noted that this reaction is only substantially
+activatedatelevatedtemperaturesincomparisontoECring-
+opening catalyzed by H2O, which proceeds substantially
+alreadyat ≥40 °C.24Thus,theresultsunderlinetheadvantages
+ofTMSPaasanelectrolyteadditiveinLIBs.TMSPascavenges
+the residual H2O and therefore prevents the EC solvent
+decompositionandseveralsubsequentharmfulsidereactions.
+Moreover, the TMSPa decomposition products are not as
+reactive toward electrolyte solvents as the water with the
+virtuallystableTMSOTMSastheendproduct.Inthiscontext,
+itcanbepointedoutthatnoobservablealterationinthecolor
+of the solutions upon the introduction of either water or
+TMSPawasobserved.
+■CONCLUSIONS
+Deeperinsightsintothereactionpathwaysofsilyl-phosphate-
+basedadditives,hereexemplifiedbyTMSPa,towardH2Oin
+LIBshavebeenpresented.BasedontheevidencefromNMR
+and GC−MS analysis as well as MD-DFT simulations, a
+mechanismisproposed.
+Si−ObondswithinTMSPareactwithresidualH2Ointhe
+presenceofcarbonatesolventstoformTMSOHandH3PO4.
+TMSOHreactssubsequentlywithunreactedTMSPatoform
+thelessreactiveTMSOTMSdimer.Arisk,however,isthatthe
+resultingTMSOHperformsanucleophilicattackonandring-
+opensECtoformTMS-EG,albeitataverylowrateatRT.
+The activation energy required to open up the EC ring by
+TMSOH is much higher than the energy required by the
+significantly more mobile H2O. In a practical scenario, it is
+highly desirable to let TMSPa scavenge H2O to form less
+reactive TMS-based compounds. This also hints in the
+directionthatH2Oisastrongernucleophile thanTMSOH.
+Thecomputationalresultsfurthersuggestthattheabilityofthe
+reactionproductstoformenergeticallyfavorableintermolec-
+ularinteractionssuchashydrogenbondingisimportantforthe
+efficientbreakageoftheO−SibondofTMSPa.
+Ourstudypointstothechemicalstabilityoforganosilicon
+additives in typical LIB electrolyte solutions, which raises
+questions as to whether the cathode protective agent is the
+parent compound itself or the polymerized species of the
+additivemolecule.Thoughtheseresultsdeservemoredetailed
+investigations as a function of electrochemical cycling and
+agingconditionsofLi-ioncellsaswellasofsynergeticeffects
+inthepresenceofotheradditives,thepresentmodelstudyhas
+proventoberelevantandpavesthewayforfurtherstudies
+dedicatedtoimprovethelifespanofLIBs.Webelievethata
+comprehensive insight combining simple and systematic
+experimental measurements with first-principles calculations
+canrepresentanimportantbreakthroughpoint.
+■ASSOCIATED CONTENT
+*sı Supporting Information
+The Supporting Information is available free of charge at
+https://pubs.acs.org/doi/10.1021/acs.jpcc.3c07505.
+Scheme 1. Scheme Showing the EC Ring-Opening Reaction Pathways Triggered by TMSOH
+Figure 6.GC−MSspectraof(a)EC/DECasbaseline,(b)5vol%
+TMSOHinEC/DECatRT,and(c)5vol%TMSOHinEC/DECat
+80 °C.
+TheJournalof PhysicalChemistry C pubs.acs.org/JPCC Article
+https://doi.org/10.1021/acs.jpcc.3c07505
+J. Phys. Chem. C 2024, 128, 1654−1662
+1660
+Downloaded from pubs.​acs.​org/​jpccck/​article-pdf/​128/​4/​1654/​1701409/​jp3c07505.​pdf by guest on 02 September 2026
+
+--- PAGE 8 ---
+Extended1H,31P,29SiNMRspectra,massspectrafrom
+GC−MS,andcomputationaldetails(PDF)
+■AUTHOR INFORMATION
+CorrespondingAuthors
+Neeha Gogoi − Department of Chemistry, Ångström
+Laboratory, Uppsala University, SE-751 21 Uppsala,
+Sweden;
+ orcid.org/0000-0002-0481-5544;
+Email:neeha.gogoi@kemi.uu.se
+Erik J. Berg − Department of Chemistry, Ångström
+Laboratory, Uppsala University, SE-751 21 Uppsala,
+Sweden;
+ orcid.org/0000-0001-5653-0383;
+Email:erik.berg@kemi.uu.se
+Authors
+Wandi Wahyudi − Department of Chemistry, Ångström
+Laboratory, Uppsala University, SE-751 21 Uppsala,
+Sweden
+Jonas Mindemark − Department of Chemistry, Ångström
+Laboratory, Uppsala University, SE-751 21 Uppsala,
+Sweden;
+ orcid.org/0000-0002-9862-7375
+Guiomar Hernández − Department of Chemistry, Ångström
+Laboratory, Uppsala University, SE-751 21 Uppsala,
+Sweden;
+ orcid.org/0000-0002-2004-5869
+Peter Broqvist − Department of Chemistry, Ångström
+Laboratory, Uppsala University, SE-751 21 Uppsala,
+Sweden;
+ orcid.org/0000-0002-9842-4332
+Completecontactinformationisavailableat:
+https://pubs.acs.org/10.1021/acs.jpcc.3c07505
+Notes
+Theauthorsdeclarenocompetingfinancialinterest.
+■ACKNOWLEDGMENTS
+The authors acknowledge the Knut and Alice Wallenberg
+(KAW) Foundation (grant 2017.0204), Swedish Research
+Council(2016-04069),andStiftelsenförStrategiskForskning
+(SSF, FFL18-0269) for financial support and StandUp for
+Energyandthenationalstrategice-ScienceprogrameSSENCE
+forbasefunding.Thesimulationswereperformedonresources
+providedbytheSwedishNationalInfrastructureforComput-
+ing(SNIC)atHPC2NandNSC.
+■REFERENCES
+(1)Barlowz,C.G.Reactionofwaterwithhexafluorophosphatesand
+withLibis(perfluoroethylsulfonyl)imidesalt. Electrochem. Solid-State
+Lett. 1999, 2,362−364.
+(2)Sinha,N.N.;Burns,J.C.;Dahn,J.R.ComparativeStudyof
+Tris(trimethylsilyl)PhosphateandTris(trimethylsilyl)Phosphiteas
+ElectrolyteAdditivesforLi-IonCells. J. Electrochem. Soc. 2014, 161,
+A1084−A1089.
+(3)Han,Y.K.;Yoo,J.;Yim,T.Whyistris(trimethylsilyl)phosphite
+effectiveasanadditiveforhigh-voltagelithium-ionbatteries? J. Mater.
+Chem. A 2015, 3,10900−10909.
+(4)Peebles,C.;Sahore,R.;Gilbert,J.A.;Garcia,J.C.;Tornheim,
+A.;Bareño,J.;Iddir,H.;Liao,C.;Abraham,D.P.Tris(trimethylsilyl)
+Phosphite (TMSPi) and Triethyl Phosphite (TEPi) as Electrolyte
+Additives for Lithium Ion Batteries: Mechanistic Insights into
+DifferencesduringLiNi0.5Mn0.3Co0.2O2-GraphiteFullCell
+Cycling. J. Electrochem. Soc. 2017, 164,A1579−A1586.
+(5)Mai,S.;Xu,M.;Liao,X.;Hu,J.;Lin,H.;Xing,L.;Liao,Y.;Li,
+X.;Li,W.Tris(trimethylsilyl)phosphiteaselectrolyteadditiveforhigh
+voltage layered lithium nickel cobalt manganese oxide cathode of
+lithiumionbattery. Electrochim. Acta 2014, 147,565−571.
+(6)Park,M.W.;Park,S.;Choi,N.S.UnanticipatedMechanismof
+the Trimethylsilyl Motif in Electrolyte Additives on Nickel-Rich
+CathodesinLithium-IonBatteries. ACS Appl. Mater. Interfaces2020,
+12,43694−43704.
+(7)Guéguen,A.;Bolli,C.;Mendez,M.A.;Berg,E.J.Elucidatingthe
+Reactivity of Tris(trimethylsilyl)phosphite and Tris(trimethylsilyl)-
+phosphate Additives in Carbonate Electrolytes - A Comparative
+OnlineElectrochemicalMassSpectrometryStudy. ACS Appl. Energy
+Mater. 2020, 3,290−299.
+(8)Bolli,C.;Guéguen,A.;Mendez,M.A.;Berg,E.J.Operando
+MonitoringofF-FormationinLithiumIonBatteries. Chem. Mater.
+2019, 31,1258−1267.
+(9) Gogoi, N.; Bowall, E.; Lundström, R.; Mozhzhukhina, N.;
+Hernández, G.; Broqvist, P.; Berg, E. J. Silyl-Functionalized
+Electrolyte Additives and Their Reactivity toward Lewis Bases in
+Li-IonCells. Chem. Mater. 2022, 34,3831−3838.
+(10)Frisch,M.J.;Trucks,G.W.;Schlegel,H.B.;Scuseria,G.E.;
+Robb,M.A.;Cheeseman,J.R.;Scalmani,G.;Barone,V.;Mennucci,
+B.;Petersson,G.A.;Nakatsuji,H.;Caricato,M.;Li,X.;Hratchian,H.
+P.;Izmaylov,A.F.;Bloino,J.;Zheng,G.;Sonnenberg,J.L.;Had,M.
+Gaussian 09;Gaussian,Inc.:WallingfordCT,2016.
+(11)Becke,A.D.Density-functionalthermochemistry.III.Therole
+ofexactexchange. J. Chem. Phys. 1993, 98,5648−5652.
+(12) Lecklider, T. Development of the Colic-Salvetti correlation-
+energyintoafunctionaloftheelectrondensityformula. Eval. Eng.
+2011, 50,36−39.
+(13) Vosko, S. H.; Wilk, L.; Nusair, M. Accuratespin-dependent
+electronliquidcorrelationenergiesforlocalspindensitycalculations:
+acriticalanalysis. Can. J. Phys. 1980, 58,1200−1211.
+(14)Stephens,P.J.;Devlin,F.J.;Chabalowski,C.F.;Frisch,M.J.
+Ab Initio Calculation of Vibrational Absorption and Circular
+Dichroism Spectra Using Density Functional Force Fields. J. Phys.
+Chem. 1994, 98,11623−11627.
+(15)Grimme,S.;Antony,J.;Ehrlich,S.;Krieg,H.Aconsistentand
+accurate ab initio parametrization of density functional dispersion
+correction(DFT-D)forthe94elementsH-Pu. J. Chem. Phys. 2010,
+132,154104.
+(16) Shao, Y.; Hellström, M.; Mitev, P. D.; Knijff, L.; Zhang,C.
+PiNN: A Python Library for Building Atomic Neural Networks of
+MoleculesandMaterials. J. Chem. Inf. Model. 2020, 60,1184−1193.
+(17)Bannwarth,C.;Caldeweyher,E.;Ehlert,S.;Hansen,A.;Pracht,
+P.; Seibert, J.; Spicher, S.; Grimme, S. Extended tight-binding
+quantum chemistry methods. Wiley Interdiscip. Rev. Comput. Mol.
+Sci. 2021, 11,1−49.
+(18) Bannwarth, C.; Ehlert, S.; Grimme, S. GFN2-xTB - An
+Accurate and Broadly Parametrized Self-Consistent Tight-Binding
+Quantum Chemical Method with Multipole Electrostatics and
+Density-Dependent Dispersion Contributions. J. Chem. Theory
+Comput. 2019, 15,1652−1671.
+(19)Shao,Y. Simulating Ion Transport in Electrolyte Materials with
+Physics-Based and Machine-Learning Models;UppsalaUniversity,2022.
+(20)HjorthLarsen,A.;JørgenMortensen,J.;Blomqvist,J.;Castelli,
+I.E.;Christensen,R.;Dułak,M.;Friis,J.;Groves,M.N.;Hammer,B.;
+Hargus, C.; et al. The atomic simulation environment - A Python
+libraryforworkingwithatoms. J. Phys.: Condens. Matter 2017, 29,
+273002.
+(21) Allouche, A. Packmol: A Package for Building Initial
+Configurations for Molecular Dynamics Simulations. J. Comput.
+Chem. 2011, 32,174−182.
+(22)Yim,T.;Woo,S.G.;Lim,S.H.;Cho,W.;Song,J.H.;Han,Y.
+K.;Kim,Y.5V-classhigh-voltagebatterieswithover-lithiatedoxide
+and amulti-functionaladditive. J. Mater. Chem. A 2015, 3, 6157−
+6167.
+(23)Qi,X.;Tao,L.;Hahn,H.;Schultz,C.;Gallus,D.R.;Cao,X.;
+Nowak,S.;Röser,S.;Li,J.;Cekic-Laskovic,I.;etal.Lifetimelimitof
+tris(trimethylsilyl)phosphiteaselectrolyteadditiveforhighvoltage
+lithiumionbatteries. RSC Adv. 2016, 6,38342−38349.
+(24) Metzger, M.; Strehle, B.; Solchenbach, S.; Gasteiger, H. A.
+HydrolysisofEthyleneCarbonatewithWaterandHydroxideunder
+TheJournalof PhysicalChemistry C pubs.acs.org/JPCC Article
+https://doi.org/10.1021/acs.jpcc.3c07505
+J. Phys. Chem. C 2024, 128, 1654−1662
+1661
+Downloaded from pubs.​acs.​org/​jpccck/​article-pdf/​128/​4/​1654/​1701409/​jp3c07505.​pdf by guest on 02 September 2026
+
+--- PAGE 9 ---
+BatteryOperatingConditions. J. Electrochem. Soc.2016, 163,A1219−
+A1225.
+TheJournalof PhysicalChemistry C pubs.acs.org/JPCC Article
+https://doi.org/10.1021/acs.jpcc.3c07505
+J. Phys. Chem. C 2024, 128, 1654−1662
+1662
+Downloaded from pubs.​acs.​org/​jpccck/​article-pdf/​128/​4/​1654/​1701409/​jp3c07505.​pdf by guest on 02 September 2026
