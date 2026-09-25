@@ -8,9 +8,11 @@ from kinetics.spectroscopy.molecular_symmetry import (
     DEFAULT_NUCLEI,
     DEFAULT_SPECIES
 )
-from kinetics.spectroscopy.virtual_nmr import simulate_virtual_nmr, lorentzian
 from kinetics.spectroscopy.multinuclear_nmr import (
     simulate_multinuclear_spectra,
+    simulate_virtual_nmr,
+    lorentzian,
+    DEFAULT_NMR_29SI,
     site_peaks,
     auto_regions,
     compute_water_mass_balance
@@ -32,6 +34,7 @@ __all__ = [
     "DEFAULT_SPECIES",
     "simulate_virtual_nmr",
     "lorentzian",
+    "DEFAULT_NMR_29SI",
     "simulate_multinuclear_spectra",
     "site_peaks",
     "auto_regions",

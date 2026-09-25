@@ -4,7 +4,10 @@
 import numpy as np
 import pandas as pd
 from scipy.integrate import solve_ivp
-from calculate_rate_constants import calculate_rate_constants
+try:
+    from kinetics.microkinetics.rate_constants import calculate_rate_constants
+except ImportError:
+    from calculate_rate_constants import calculate_rate_constants
 
 def build_stoichiometric_matrix(reactions_net: dict, tracked_species: list) -> np.ndarray:
     """

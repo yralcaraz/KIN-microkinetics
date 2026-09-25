@@ -3,9 +3,14 @@
 # ==============================================================================
 import numpy as np
 import pandas as pd
-from calculate_rate_constants import calculate_rate_constants
-from calculate_gas_thermo import R_SI, EV_TO_KJ_MOL
-from calculate_reaction_thermo import _get_reactions_network
+try:
+    from kinetics.microkinetics.rate_constants import calculate_rate_constants
+    from kinetics.thermo.gas_thermo import R_SI, EV_TO_KJ_MOL
+    from kinetics.thermo.reaction_thermo import _get_reactions_network
+except ImportError:
+    from calculate_rate_constants import calculate_rate_constants
+    from calculate_gas_thermo import R_SI, EV_TO_KJ_MOL
+    from calculate_reaction_thermo import _get_reactions_network
 
 def fit_modified_arrhenius(
     rxn_id: str,

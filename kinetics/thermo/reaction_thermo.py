@@ -12,8 +12,14 @@
 # ==============================================================================
 import inspect
 import numpy as np
-from calculate_solution_gibbs import calculate_solution_gibbs
-from calculate_gas_thermo import R_SI, EV_TO_KJ_MOL
+
+try:
+    from kinetics.thermo.solution_gibbs import calculate_solution_gibbs
+    from kinetics.thermo.gas_thermo import R_SI, EV_TO_KJ_MOL
+except ImportError:
+    from calculate_solution_gibbs import calculate_solution_gibbs
+    from calculate_gas_thermo import R_SI, EV_TO_KJ_MOL
+
 
 DEFAULT_REACTIONS_NETWORK = {
     'R1': {'reactants': {'TMSPA': 1, 'H2O': 1},     'products': {'BMSPA': 1, 'TMSOH': 1},   'class': 'hydrolysis'},

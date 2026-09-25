@@ -1,9 +1,12 @@
 # ==============================================================================
 # BLOCK 3B: SOLUTION-PHASE GIBBS FREE ENERGY CALCULATOR
 # ==============================================================================
-import numpy as np
-from calculate_gas_thermo import calculate_gas_thermo, EV_TO_KJ_MOL, _get_species_database
-from calculate_standard_state_shift import calculate_standard_state_shift
+try:
+    from kinetics.thermo.gas_thermo import calculate_gas_thermo, EV_TO_KJ_MOL, _get_species_database
+    from kinetics.thermo.standard_state import calculate_standard_state_shift
+except ImportError:
+    from calculate_gas_thermo import calculate_gas_thermo, EV_TO_KJ_MOL, _get_species_database
+    from calculate_standard_state_shift import calculate_standard_state_shift
 
 def calculate_solution_gibbs(species_name: str, T_K: float, species_db: dict = None, mode: str = 'qRRHO', **kwargs) -> dict:
     """

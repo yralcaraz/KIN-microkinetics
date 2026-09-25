@@ -3,8 +3,12 @@
 # ==============================================================================
 import inspect
 import numpy as np
-from calculate_reaction_thermo import calculate_reaction_thermo
-from calculate_gas_thermo import R_SI, KB_SI, H_SI, EV_TO_KJ_MOL
+try:
+    from kinetics.thermo.reaction_thermo import calculate_reaction_thermo
+    from kinetics.thermo.gas_thermo import R_SI, KB_SI, H_SI, EV_TO_KJ_MOL
+except ImportError:
+    from calculate_reaction_thermo import calculate_reaction_thermo
+    from calculate_gas_thermo import R_SI, KB_SI, H_SI, EV_TO_KJ_MOL
 
 DEFAULT_FAMILY_BEP_PARAMETERS = {
     'hydrolysis':     {'E0_eV': 0.80, 'alpha': 0.50},
